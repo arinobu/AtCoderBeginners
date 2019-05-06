@@ -1,6 +1,12 @@
 // inputに入力データ全体が入る
 function Main(input) {
     /*
+    余分な空白を削除する場合
+    input = input.trim();
+
+    文字列を数字に変換する場合
+    input = parseInt(input,10); // or Number(input)
+
     改行で区切る場合
     input.split("\n");
     1行目から配列に格納される

@@ -1,14 +1,9 @@
 // inputに入力データ全体が入る
-var input = "2\n5 1 1\n100 1 1";
-
 function Main(input) {
     input = input.trim();
-    console.log(input);
     input = input.split("\n");
-    console.log(input);
     var N = input[0];
     input = input.slice(1);
-    console.log(input);
     var tXY = [];
     for(var i = 0; i < N; i ++){
         tXY[i] = input[i].split(" ");
@@ -16,8 +11,6 @@ function Main(input) {
             tXY[i][j] = parseInt(tXY[i][j]);
         }
     }
-    console.log(tXY);
-
     var isPossible = true;
     if((tXY[0][1] + tXY[0][2]) > tXY[0][0] || (tXY[0][0] - (tXY[0][1] + tXY[0][2]))%2 == 1){
         isPossible = false;
@@ -35,5 +28,5 @@ function Main(input) {
         console.log("No");
     }
 }
-
-Main(input);
+//*この行以降は編集しないでください（標準入出力から一度に読み込み、Mainを呼び出します）
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
